@@ -1,0 +1,44 @@
+{
+  "hard": [
+    "JavaScript", "TypeScript", "React", "Vue.js", "Angular", "Next.js", "Nuxt.js",
+    "HTML5", "CSS3", "Sass", "Tailwind CSS", "Redux", "Zustand", "Webpack", "Vite",
+    "Node.js", "Express", "Fastify", "NestJS", "Python", "Django", "FastAPI", "Flask",
+    "Java", "Spring Boot", "Go", "Rust", "C#", ".NET", "PHP", "Laravel",
+    "PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "Prisma", "Drizzle ORM",
+    "Docker", "Kubernetes", "Git", "GitHub Actions", "GitLab CI", "Linux", "AWS", "Google Cloud",
+    "GraphQL", "REST API", "gRPC", "WebSockets", "Microservices",
+    "Figma", "Adobe Photoshop", "Adobe Illustrator", "UI Design", "UX Research", "Wireframing", "Prototyping",
+    "SQL", "Pandas", "NumPy", "Tableau", "Power BI", "Excel", "Data Analysis", "Machine Learning",
+    "Jest", "Vitest", "Cypress", "Playwright", "Unit Testing", "E2E Testing",
+    "Scrum", "Agile", "Kanban", "Jira", "Confluence"
+  ],
+  "soft": [
+    "Работа в команде", "Наставничество", "Управление временем", "Критическое мышление",
+    "Решение проблем", "Адаптивность", "Деловая коммуникация", "Переговоры",
+    "Управление проектами", "Лидерство", "Публичные выступления", "Эмоциональный интеллект",
+    "Jamoada ishlash", "Vaqtni boshqarish", "Muammolarni hal qilish", "Liderlik",
+    "Teamwork", "Mentoring", "Time Management", "Critical Thinking", "Problem Solving"
+  ],
+  "synonyms": {
+    "js": "JavaScript",
+    "ts": "TypeScript",
+    "reactjs": "React",
+    "react.js": "React",
+    "vue": "Vue.js",
+    "vuejs": "Vue.js",
+    "nodejs": "Node.js",
+    "node": "Node.js",
+    "postgres": "PostgreSQL",
+    "psql": "PostgreSQL",
+    "k8s": "Kubernetes",
+    "tailwind": "Tailwind CSS",
+    "next": "Next.js",
+    "nextjs": "Next.js",
+    "реакт": "React",
+    "тайпскрипт": "TypeScript",
+    "жаваскрипт": "JavaScript",
+    "нода": "Node.js",
+    "докер": "Docker",
+    "гит": "Git"
+  }
+}

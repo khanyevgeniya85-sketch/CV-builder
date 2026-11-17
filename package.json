@@ -1,0 +1,22 @@
+{
+  "name": "cv-builder-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel --filter @cvb/* run dev",
+    "dev:web": "pnpm --filter @cvb/web dev",
+    "dev:api": "pnpm --filter @cvb/api dev",
+    "build": "pnpm --recursive run build",
+    "test": "pnpm --recursive run test",
+    "lint:copy": "node scripts/copy-lint.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

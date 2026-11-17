@@ -1,0 +1,30 @@
+{
+  "name": "@cvb/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cvb/shared": "workspace:*",
+    "@cvb/ai-prompts": "workspace:*",
+    "@cvb/templates": "workspace:*",
+    "@fontsource-variable/onest": "^5.1.0",
+    "@fontsource/comic-relief": "^5.1.0",
+    "lucide-react": "^0.460.0",
+    "motion": "^11.11.17",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.1"
+  }
+}

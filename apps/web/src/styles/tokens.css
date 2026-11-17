@@ -1,0 +1,424 @@
+@import '@fontsource-variable/onest';
+
+:root {
+  /* Architectural Studio — Светлая монохромная палитра (DESIGN v2.0 §8.1) */
+  --desk: #f4f4f5;
+  --paper: #fafafa;
+  --surface: #ffffff;
+  --ink: #09090b;
+  --ink-2: #52525b;
+  --ink-3: #a1a1aa;
+  --rule: #e4e4e7;
+  --rule-strong: #71717a;
+
+  /* Основной системный акцент: строгий графит */
+  --lazur: #18181b;
+  --lazur-strong: #09090b;
+  --lazur-wash: #f4f4f5;
+  --on-lazur: #ffffff;
+
+  /* Функциональные редакционные маркеры (без неона) */
+  --brick: #c2410c;
+  --brick-wash: #fff7ed;
+  --olive: #15803d;
+  --ochre: #b45309;
+
+  /* Шрифты (Onest + JetBrains Mono) */
+  --font-ui: 'Onest Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Геометрия и тени */
+  --radius-0: 0px;
+  --radius-1: 3px;
+  --radius-2: 4px;
+  --radius-pill: 999px;
+  --shadow-sheet: 0 1px 3px rgb(0 0 0 / 0.06), 0 8px 24px rgb(0 0 0 / 0.04);
+  --shadow-sheet-lifted: 0 16px 32px -12px rgb(0 0 0 / 0.14);
+
+  /* Движение: строго 150–200 мс (DESIGN v2.0 §10) */
+  --dur-instant: 100ms;
+  --dur-quick: 160ms;
+  --dur-base: 200ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-enter: ease-out;
+  --ease-exit: ease-in;
+
+  color-scheme: light dark;
+  font-family: var(--font-ui);
+  font-synthesis: none;
+}
+
+:root[data-theme='dark'] {
+  --desk: #09090b;
+  --paper: #0f0f11;
+  --surface: #121215;
+  --ink: #fafafa;
+  --ink-2: #a1a1aa;
+  --ink-3: #52525b;
+  --rule: #27272a;
+  --rule-strong: #52525b;
+
+  --lazur: #fafafa;
+  --lazur-strong: #ffffff;
+  --lazur-wash: #27272a;
+  --on-lazur: #09090b;
+
+  --brick: #ea580c;
+  --brick-wash: #431407;
+  --olive: #4ade80;
+  --ochre: #fbbf24;
+  --shadow-sheet: 0 12px 32px -8px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 60ms;
+    --dur-quick: 80ms;
+    --dur-base: 100ms;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--lazur-wash);
+}
+
+/* Типографика (Onest + JetBrains Mono) */
+.font-display {
+  font-family: var(--font-ui);
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.font-h1 {
+  font-family: var(--font-ui);
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.font-h2 {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.font-h3 {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.font-body {
+  font-family: var(--font-ui);
+  font-size: 14.5px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.font-body-s {
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.font-label {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.font-caption {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.font-note,
+.font-mono {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+/* Кнопки (строгая геометрия без свечений и градиентов) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: var(--radius-1);
+  background: var(--lazur);
+  color: var(--on-lazur);
+  border: 1px solid var(--lazur);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--dur-instant) var(--ease-enter), opacity var(--dur-instant) var(--ease-enter);
+  text-decoration: none;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--lazur-strong);
+  opacity: 0.92;
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--lazur);
+  outline-offset: 2px;
+}
+.btn-primary:disabled {
+  background: var(--ink-3);
+  border-color: var(--ink-3);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: var(--radius-1);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--dur-instant) var(--ease-enter), background var(--dur-instant) var(--ease-enter);
+  text-decoration: none;
+}
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--border-strong, var(--rule-strong));
+  background: var(--paper);
+}
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--lazur);
+  outline-offset: 2px;
+}
+.btn-secondary:disabled {
+  color: var(--ink-3);
+  border-color: var(--rule);
+  cursor: not-allowed;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+.btn-danger {
+  background: none;
+  border: none;
+  color: var(--brick);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-danger:hover {
+  text-decoration: underline;
+}
+
+/* Поля ввода */
+.input-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.input-field {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border-radius: var(--radius-1);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--dur-instant) var(--ease-enter);
+}
+.input-field:hover {
+  border-color: var(--rule-strong);
+}
+.input-field:focus {
+  border-color: var(--lazur);
+  outline: 2px solid var(--lazur);
+  outline-offset: 1px;
+}
+.input-field::placeholder {
+  color: var(--ink-3);
+}
+
+.textarea-field {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 11px;
+  border-radius: var(--radius-1);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+  line-height: 1.5;
+  transition: border-color var(--dur-instant) var(--ease-enter);
+}
+.textarea-field:hover {
+  border-color: var(--rule-strong);
+}
+.textarea-field:focus {
+  border-color: var(--lazur);
+  outline: 2px solid var(--lazur);
+  outline-offset: 1px;
+}
+.textarea-field::placeholder {
+  color: var(--ink-3);
+}
+
+.input-hint {
+  font-size: 12px;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+
+/* Архитектурный стол с тонкой сеткой */
+.desk-surface {
+  background-color: var(--desk);
+  background-image: radial-gradient(var(--rule) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: -19px -19px;
+  min-height: 100%;
+}
+
+.paper-sheet {
+  box-shadow: var(--shadow-sheet);
+  transition: box-shadow var(--dur-quick) var(--ease-standard), width var(--dur-base) var(--ease-standard);
+}
+
+/* Redline Diff Engine (DESIGN v2.0 §5) */
+.editorial-deleted {
+  color: var(--ink-2);
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-2);
+  text-decoration-thickness: 1px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  padding: 6px 10px;
+  background: var(--paper);
+  border-left: 2px solid var(--ink-3);
+}
+.editorial-inserted {
+  color: var(--ink);
+  border-left: 2px solid var(--brick);
+  background-color: var(--brick-wash);
+  padding: 6px 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.editorial-note {
+  font-family: var(--font-mono);
+  color: var(--ink-2);
+  font-size: 12px;
+}
+
+/* Инлайн-инпуты для WYSIWYG редактирования на листе */
+.wysiwyg-input {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--dur-instant) var(--ease-enter), background var(--dur-instant) var(--ease-enter);
+}
+.wysiwyg-input:hover {
+  border-color: var(--rule-strong);
+  background: rgba(0, 0, 0, 0.02);
+}
+.wysiwyg-input:focus {
+  border-color: var(--lazur);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Responsive & Layout Utilities (matching Editor & Preview classes) */
+.hidden { display: none; }
+.flex { display: flex; }
+@media (min-width: 1024px) {
+  .lg\:flex { display: flex !important; }
+  .lg\:inline-flex { display: inline-flex !important; }
+  .lg\:hidden { display: none !important; }
+}
+
+.tabs-scroll-clean {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tabs-scroll-clean::-webkit-scrollbar {
+  display: none;
+}
+
+/* Print cleanup */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body, .desk-surface {
+    background: #ffffff !important;
+    background-image: none !important;
+  }
+  .paper-sheet {
+    box-shadow: none !important;
+  }
+}
